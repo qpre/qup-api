@@ -2,16 +2,16 @@
 
 one:
   id: 1
-  user_id: 
+  author_id: 
   title: MyString
-  date: 2014-02-13 14:28:04
+  date: 2014-02-13 14:57:02
   excerpt: MyString
   body: MyText
 
 two:
   id: 1
-  user_id: 
+  author_id: 
   title: MyString
-  date: 2014-02-13 14:28:04
+  date: 2014-02-13 14:57:02
   excerpt: MyString
   body: MyText
