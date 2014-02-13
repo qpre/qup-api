@@ -5,6 +5,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    respond_to do |format|
+      format.json { render :json => @posts, :callback => params[:callback] }
+    end
   end
 
   # GET /posts/1
