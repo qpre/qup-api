@@ -1,11 +1,16 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use Postgres as the database for Active Record since sqlt3 is unsupported on heroku
-gem 'pg'
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
