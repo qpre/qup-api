@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  befor_filter :cors_preflight_check
+  before_filter :cors_preflight_check
   after_filter :set_access_control_headers
 
   # For all responses in this controller, return the CORS access control headers.
