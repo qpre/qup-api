@@ -1,5 +1,7 @@
 QupApi::Application.routes.draw do
-  match 'posts', to: 'posts#index', via: [:options]
+
+  match '*all' => 'application#cors', :constraints => {:method => 'OPTIONS'}
+
   resources :posts
 
   resources :authors
