@@ -3,6 +3,8 @@ QupApi::Application.routes.draw do
 
   resources :authors
 
+  match "*all" => "application#cors_preflight_check", :constraints => { :method => "OPTIONS" }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
