@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  after_filter :set_access_control_headers
+  before_filter :set_access_control_headers
 
   # GET /posts
   # GET /posts.json
