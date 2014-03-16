@@ -1,4 +1,5 @@
 QupApi::Application.routes.draw do
+  match 'posts', to: 'posts#index', via: [:options]
   resources :posts
 
   resources :authors
