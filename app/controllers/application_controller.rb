@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   # request, return only the necessary headers and return an empty
   # text/plain.
 
-  #def cors_preflight_check
+  def cors_preflight_check
     if request.method == :options
       set_access_control_headers
       render :text => '', :content_type => 'text/plain'
