@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     respond_to do |format|
       format.json { render :json => {:posts => @posts}, :callback => params[:callback] }
+      format.html { render :json => {:posts => @posts}, :callback => params[:callback] }
     end
   end
 
