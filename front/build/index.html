@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Food & Code</title>
+
+	<link rel="stylesheet" type="text/css" media="screen" href="extern/foundation/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="extern/foundation/css/foundation.min.css" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="assets/style/QPRecipes.min.css" />
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+    <script type="text/x-handlebars" data-template-name="application">
+		<div class="row main-container">
+	      {{outlet}}
+	    </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="posts">
+		<div class="large-3 columns menu left">
+			<ul>
+			{{#each}}
+				{{#link-to 'post' this}}
+					<li>
+						<div class="image"></div>
+						<span>{{title}}</span>
+					</li>
+				{{/link-to}}
+			{{/each}}
+			</ul>
+		</div>
+
+		<div class="large-9 columns content">
+			{{outlet}}
+		</div>
+	</script>
+
+	<script type="text/x-handlebars" data-template-name="post">
+	<div class="post">
+		<div class="row post-header">
+			<div class="image"></div>
+			<h1>{{title}}</h1>
+			<div class='keywords'>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+				<span>ruby</span>
+			</div>
+		</div>
+		<div class='row post-body'>
+			<div>
+				{{format-markdown body}}
+			</div>
+		</div>
+	</div>
+	</script>
+
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="extern/jquery.js"></script>
+	<script type="text/javascript" src="extern/moment.min.js"></script>
+	<script type="text/javascript" src="extern/showdown.min.js"></script>
+
+	<script type="text/javascript" src="extern/foundation/js/foundation.min.js"></script>
+
+	<script type="text/javascript" src="extern/handlebars.js"></script>
+	<script type="text/javascript" src="extern/ember.js"></script>
+	<script type="text/javascript" src="extern/ember-data.js"></script>
+
+	<script type="text/javascript" src="QPRecipes.js"></script>
+</body>
+</html>

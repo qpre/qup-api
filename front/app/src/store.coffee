@@ -1,0 +1,1 @@
+QPRecipes.ApplicationAdapter = DS.FixtureAdapter

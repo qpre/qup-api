@@ -1,0 +1,1 @@
+window.QPRecipes = QPRecipes = Ember.Application.create()
