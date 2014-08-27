@@ -12,7 +12,7 @@ module.exports = (grunt) ->
   }
   BIN='QPRecipes'
   PROJECT_NAME='QPRecipes'
-  BUILDPATH='build/'
+  BUILDPATH='../back/public'
   grunt.initConfig
     pkg: grunt.file.readJSON("package.json")
     
@@ -22,13 +22,13 @@ module.exports = (grunt) ->
         packaging: true
         # bare: true
         folders: GROUPS
-        release: "#{BUILDPATH}/#{BIN}.js"
+        release: "#{BUILDPATH}/assets/js/#{BIN}.js"
       minified:
         minify: true
         packaging: true
         # bare: true
         folders: GROUPS
-        release: "#{BUILDPATH}/#{BIN}.min.js"
+        release: "#{BUILDPATH}/assets/js/#{BIN}.min.js"
         
     handlebars:
       all:
@@ -37,7 +37,7 @@ module.exports = (grunt) ->
           processName: (filePath) ->
               filePath.replace(/^QPRecipes\/assets\/templates\//, "").replace /\.hbs$/, ""
         files:
-          "build/QPRecipes.templates.js": ["app/assets/templates/**/*.hbs"]
+          "../back/public/assets/js/QPRecipes.templates.js": ["app/assets/templates/**/*.hbs"]
           
     sass:
       dist:{
@@ -45,7 +45,7 @@ module.exports = (grunt) ->
           expand: true,
           cwd: 'app/assets/style',
           src: ['**/*.scss'],
-          dest: 'build/assets/style',
+          dest: '../back/public/assets/style',
           ext: '.css',
           }]
       }
@@ -55,7 +55,7 @@ module.exports = (grunt) ->
         options:
           banner: '/* QPRecipes */'
         files:
-          'build/assets/style/QPRecipes.min.css': ['build/assets/style/**/*.css']
+          '../back/public/assets/style/QPRecipes.min.css': ['../back/public/assets/style/**/*.css']
       
     copy:
       app:
@@ -71,7 +71,7 @@ module.exports = (grunt) ->
             expand: true
             cwd: "app/extern/"
             src: "**/*"
-            dest: "#{BUILDPATH}/extern/"
+            dest: "#{BUILDPATH}/assets/extern/"
             filter: "isFile"
           }
           {
@@ -125,7 +125,7 @@ module.exports = (grunt) ->
         options:
           livereload: LIVERELOAD_PORT
 
-        files: ["build/**/*"]
+        files: ["../back/public/**/*"]
 
     connect:
       options:
@@ -137,26 +137,13 @@ module.exports = (grunt) ->
           middleware: (connect) ->
             [
               lrSnippet
-              mountFolder(connect, "build")
+              mountFolder(connect, "../back/public")
             ]
 
     open:
       server:
         path: "http://localhost:<%= connect.options.port %>"
      
-    shell:   
-      createBuild:
-        command: "mkdir build"
-        options:
-          stdout: true,
-          failOnError: true
-
-      removeBuild:
-        command: "rm -rf build"
-        options:
-          stdout: true,
-          failOnError: true
-  
   # Load plugins
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-coffee"
@@ -173,7 +160,6 @@ module.exports = (grunt) ->
   # Tasks
   grunt.registerTask "build", [
     "clean"
-    "shell:createBuild"
     "handlebars"
     "style"
     "toaster"
