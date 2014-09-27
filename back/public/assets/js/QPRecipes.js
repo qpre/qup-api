@@ -1,4 +1,4 @@
-var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'foundation':{'css':{},'img':{},'js':{'foundation':{},'vendor':{}}}},'files':{'markdown':{}},'src':{'controllers':{},'models':{},'routes':{},'views':{},'xfixtures':{}}};
+var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootstrap':{'css':{},'fonts':{},'js':{}}},'files':{'markdown':{}},'src':{'controllers':{},'models':{},'routes':{},'views':{},'xfixtures':{}}};
 
 (function() {
   var QPRecipes, getURL, showdown;
@@ -53,13 +53,37 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'founda
     })
   });
 
+  QPRecipes.Recipe = DS.Model.extend({
+    title: DS.attr('string'),
+    bgPath: DS.attr('string'),
+    bodyPath: DS.attr('string'),
+    created: DS.attr('date'),
+    edit: DS.attr('date'),
+    body: Ember.computed(function() {
+      var _this = this;
+      if (this.get('bodyPath')) {
+        getURL("files/markdown/" + (this.get('bodyPath'))).then(function(result) {
+          return _this.set('body', result);
+        });
+        return "Loading...";
+      } else {
+        return "empty";
+      }
+    })
+  });
+
   QPRecipes.Router.map(function() {
-    return this.resource('posts', {
-      path: '/'
-    }, function() {
-      return this.resource('post', {
-        path: '/posts/:post_id'
-      });
+    this.resource('posts', {
+      path: '/posts'
+    });
+    this.resource('post', {
+      path: '/posts/:post_id'
+    });
+    this.resource('recipes', {
+      path: '/recipes'
+    });
+    return this.resource('recipe', {
+      path: '/recipes/:recipe_id'
     });
   });
 
@@ -75,21 +99,51 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'founda
     }
   });
 
+  QPRecipes.RecipeRoute = Ember.Route.extend({
+    model: function(params) {
+      return this.get('store').find('recipe', params.recipe_id);
+    }
+  });
+
+  QPRecipes.RecipesRoute = Ember.Route.extend({
+    model: function() {
+      return this.get('store').findAll('recipe');
+    }
+  });
+
   QPRecipes.ApplicationAdapter = DS.FixtureAdapter;
 
   QPRecipes.Post.FIXTURES = [
     {
       id: 1,
-      title: 'Rougail Saucisse',
+      title: 'Sinatra',
       bgPath: null,
-      bodyPath: 'rougail.md',
+      bodyPath: 'sinatra.md',
       created: Date.now(),
       edit: Date.now()
     }, {
       id: 2,
+      title: 'Lorem Ipsum',
+      bgPath: null,
+      bodyPath: 'lorem.md',
+      created: Date.now(),
+      edit: Date.now()
+    }
+  ];
+
+  QPRecipes.Recipe.FIXTURES = [
+    {
+      id: 1,
       title: 'Sinatra',
       bgPath: null,
       bodyPath: 'sinatra.md',
+      created: Date.now(),
+      edit: Date.now()
+    }, {
+      id: 2,
+      title: 'Lorem Ipsum',
+      bgPath: null,
+      bodyPath: 'lorem.md',
       created: Date.now(),
       edit: Date.now()
     }, {

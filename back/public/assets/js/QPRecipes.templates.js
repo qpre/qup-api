@@ -7,7 +7,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<div class=\"row main-container\">\n	";
+  buffer += "<nav class=\"top-bar hide-for-small\" data-topbar=\"\">\n	<ul class=\"title-area\">\n		<li class=\"name\">\n			<h1>Food & Code</h1>\n		</li>\n	</ul>\n</nav>\n<div class=\"row main-container\">\n	";
   if (helper = helpers.outlet) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.outlet); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
