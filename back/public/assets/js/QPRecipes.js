@@ -113,6 +113,52 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootst
 
   QPRecipes.ApplicationAdapter = DS.FixtureAdapter;
 
+  QPRecipes.RecipeView = Ember.View.extend({
+    classNames: ['recipe', 'animated'],
+    willAnimateIn: function() {
+      return this.$el.addClass('fadeInRight');
+    },
+    animateIn: function(done) {
+      var _this = this;
+      return Em.run.later(this, function() {
+        _this.$el.removeClass('fadeInRight');
+        return done();
+      }, 1000);
+    },
+    willAnimateOut: function() {
+      return this.$el.addClass('fadeOutLeft');
+    },
+    animateOut: function(done) {
+      return Em.run.later(this, done, 1000);
+    },
+    didAnimateOut: function() {
+      return this.$el = null;
+    }
+  });
+
+  QPRecipes.RecipesView = Ember.View.extend({
+    classNames: ['recipes', 'animated'],
+    willAnimateIn: function() {
+      return this.$el.addClass('fadeInLeft');
+    },
+    animateIn: function(done) {
+      var _this = this;
+      return Em.run.later(this, function() {
+        _this.$el.removeClass('fadeInLeft');
+        return done();
+      }, 1000);
+    },
+    willAnimateOut: function() {
+      return this.$el.addClass('fadeOutLeft');
+    },
+    animateOut: function(done) {
+      return Em.run.later(this, done, 1000);
+    },
+    didAnimateOut: function() {
+      return this.$el = null;
+    }
+  });
+
   QPRecipes.Post.FIXTURES = [
     {
       id: 1,

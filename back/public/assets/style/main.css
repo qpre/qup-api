@@ -39,11 +39,6 @@ body {
   padding: 7px;
   border-radius: 50%; }
 
-.recipe {
-  background-size: 100%;
-  background-position: center;
-  background: url("http://lorempixel.com/1024/768/food") no-repeat; }
-
 .recipes-showcase > li {
   float: left; }
 

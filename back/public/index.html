@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-  	<div class="container animated fadeIn">
+  	<div class="container">
       {{outlet}}
     </div>
     <div class="footer">
@@ -60,11 +60,13 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="posts">
+  <div id='posts'>
     <ul>
     {{#each post in this}}
       <li>{{#link-to 'post' post}}{{post.title}}{{/link-to}}</li>
     {{/each}}
     </ul>
+  </div>
   </script>
 
 	<script type="text/x-handlebars" data-template-name="post">
@@ -77,8 +79,8 @@
 	</script>
 
   <script type="text/x-handlebars" data-template-name="recipes">
-    <h1 style='padding-left: 60px;'>Recipes :</h1>
-      <ul class="recipes-showcase jumbotron ">
+      <h1 style='padding-left: 60px;'>Recipes :</h1>
+      <ul class="recipes-showcase jumbotron">
       {{#each recipe in this}}
         <li>
           {{#link-to 'recipe' recipe}}
@@ -100,7 +102,6 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="recipe">
-    <div class='recipe'>
       <div class='post-header'>
         <div class="image"></div>
         <h1>{{title}}</h1>
@@ -122,7 +123,6 @@
       <div class="jumbotron">
         {{format-markdown body}}
       </div>
-    </div>
   </script>
 
 	<!-- SCRIPTS -->
@@ -135,6 +135,7 @@
 	<script type="text/javascript" src="assets/extern/handlebars.js"></script>
 	<script type="text/javascript" src="assets/extern/ember.min.js"></script>
 	<script type="text/javascript" src="assets/extern/ember-data.min.js"></script>
+  <script type="text/javascript" src="assets/extern/ember-animate.js"></script>
 
 	<script type="text/javascript" src="assets/js/QPRecipes.js"></script>
 </body>
