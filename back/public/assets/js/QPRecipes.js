@@ -1,4 +1,4 @@
-var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootstrap':{'css':{},'fonts':{},'js':{}}},'files':{'markdown':{}},'src':{'controllers':{},'models':{},'routes':{},'views':{},'xfixtures':{}}};
+var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootstrap':{'css':{},'fonts':{},'js':{}},'highlight':{'styles':{}}},'files':{'markdown':{}},'src':{'controllers':{},'models':{},'routes':{},'views':{},'xfixtures':{}}};
 
 (function() {
   var QPRecipes, getURL, showdown;
@@ -34,12 +34,18 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootst
     });
   };
 
+  Ember.Handlebars.helper('add-background-image', function(url) {
+    url = Handlebars.Utils.escapeExpression(url);
+    return new Handlebars.SafeString("<div class=\"image\" style=\"background: url('" + url + "') 50% 50% / 100% no-repeat;\"></div>");
+  });
+
   QPRecipes.Post = DS.Model.extend({
     title: DS.attr('string'),
     bgPath: DS.attr('string'),
     bodyPath: DS.attr('string'),
     created: DS.attr('date'),
     edit: DS.attr('date'),
+    tags: DS.attr('array'),
     body: Ember.computed(function() {
       var _this = this;
       if (this.get('bodyPath')) {
@@ -59,6 +65,7 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootst
     bodyPath: DS.attr('string'),
     created: DS.attr('date'),
     edit: DS.attr('date'),
+    tags: DS.attr('array'),
     body: Ember.computed(function() {
       var _this = this;
       if (this.get('bodyPath')) {
@@ -113,10 +120,40 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootst
 
   QPRecipes.ApplicationAdapter = DS.FixtureAdapter;
 
+  QPRecipes.PostView = Ember.View.extend({
+    classNames: ['post', 'animated'],
+    willAnimateIn: function() {
+      this.$el.addClass('fadeInRight');
+      return console.log(this.$el.find('.image'));
+    },
+    animateIn: function(done) {
+      var _this = this;
+      return Em.run.later(this, function() {
+        _this.$el.removeClass('fadeInRight');
+        return done();
+      }, 1000);
+    },
+    willAnimateOut: function() {
+      return this.$el.addClass('fadeOutLeft');
+    },
+    animateOut: function(done) {
+      return Em.run.later(this, done, 1000);
+    },
+    didAnimateOut: function() {
+      return this.$el = null;
+    }
+  });
+
   QPRecipes.RecipeView = Ember.View.extend({
     classNames: ['recipe', 'animated'],
     willAnimateIn: function() {
-      return this.$el.addClass('fadeInRight');
+      this.$el.addClass('fadeInRight');
+      console.log(this.$el.find('.image'));
+      return this.$el.find('.image').css({
+        'background': 'url("http://lorempixel.com/400/200/food") no-repeat',
+        'background-size': '100%',
+        'background-position': 'center center'
+      });
     },
     animateIn: function(done) {
       var _this = this;
@@ -139,7 +176,12 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootst
   QPRecipes.RecipesView = Ember.View.extend({
     classNames: ['recipes', 'animated'],
     willAnimateIn: function() {
-      return this.$el.addClass('fadeInLeft');
+      this.$el.addClass('fadeInLeft');
+      return this.$el.find('.recipe-card__image-wrapper').css({
+        'background': 'url("http://lorempixel.com/400/200/food") no-repeat',
+        'background-size': '100%',
+        'background-position': 'center center'
+      });
     },
     animateIn: function(done) {
       var _this = this;
@@ -162,18 +204,12 @@ var QPRecipes = {'assets':{'img':{},'style':{},'templates':{}},'extern':{'bootst
   QPRecipes.Post.FIXTURES = [
     {
       id: 1,
-      title: 'Sinatra',
-      bgPath: null,
-      bodyPath: 'sinatra.md',
+      title: 'Writing a simple client router',
+      bgPath: '/assets/img/Desert-Road-Wallpaper-Photos.jpg',
+      bodyPath: 'blog-simple-client-router.md',
       created: Date.now(),
-      edit: Date.now()
-    }, {
-      id: 2,
-      title: 'Lorem Ipsum',
-      bgPath: null,
-      bodyPath: 'lorem.md',
-      created: Date.now(),
-      edit: Date.now()
+      edit: Date.now(),
+      tags: ['CoffeeScript', "Javascript", "FrontEnd"]
     }
   ];
 

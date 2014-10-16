@@ -1,7 +1,7 @@
 this["QPRecipes"] = this["QPRecipes"] || {};
 this["QPRecipes"]["Templates"] = this["QPRecipes"]["Templates"] || {};
 
-this["QPRecipes"]["Templates"]["app/assets/templates/application"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["QPRecipes"]["Templates"]["front/app/assets/templates/application"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
@@ -15,7 +15,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return buffer;
   });
 
-this["QPRecipes"]["Templates"]["app/assets/templates/posts"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["QPRecipes"]["Templates"]["front/app/assets/templates/posts"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression, self=this;
