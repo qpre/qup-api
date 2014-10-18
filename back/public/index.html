@@ -48,29 +48,37 @@
         </div>
       </div>
     </div>
-  	<div class="container">
+    <div class="container">
       {{outlet}}
-    </div>
-    <div class="footer">
-      <div class="container">
-        <div class="container-fluid">
-          Code licensed under MIT, documentation under CC BY 3.0.
-        </div>
-      </div>
     </div>
   </script>
 
   <script type="text/x-handlebars" data-template-name="posts">
-  <div id='posts'>
-    <ul>
-    {{#each post in this}}
-      <li>{{#link-to 'post' post}}{{post.title}}{{/link-to}}</li>
-    {{/each}}
-    </ul>
-  </div>
+    <h1 style='padding-left: 60px;'>Posts :</h1>
+    <div class="jumbotron">
+      <div class="row">
+        {{#each post in this}}
+        <div class='col-xs-6 col-md-4'>
+          {{#link-to 'post' post}}
+          <div class="recipe-card">
+	    <!-- <div class="recipe-card__image-wrapper"> -->
+	    {{add-background-image post.bgPath}}
+	    <div class="recipe-card__content">
+              <h3 class="recipe-card__title">
+                <a class="u-link">{{post.title}}</a>
+              </h3>
+              <ul class="recipe-card__articles">
+              </ul>
+            </div>
+          </div>
+          {{/link-to}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
   </script>
 
-	<script type="text/x-handlebars" data-template-name="post">
+  <script type="text/x-handlebars" data-template-name="post">
     <div class='post'>
       <div class='post-header'>
         {{add-background-image this.bgPath}}

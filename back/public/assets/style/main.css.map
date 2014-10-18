@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAK;EACJ,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;EACd,WAAW,EAAE,IAAI;;AAGlB,uCAAoC;EACnC,UAAU,EAAE,cAAc;EAC1B,WAAW,EAAE,IAAI",
+"mappings": "AAAA,IAAK;EACJ,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,OAAO;EACd,WAAW,EAAE,IAAI;;AAGlB,uCAAoC;EACnC,UAAU,EAAE,cAAc;EAC1B,WAAW,EAAE,IAAI;;AAElB;kBACmB;EACf,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,IAAI",
 "sources": ["../../../../front/app/assets/style/main.scss"],
 "names": [],
 "file": "main.css"

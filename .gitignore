@@ -17,3 +17,7 @@
 
 # node
 /**/node_modules
+
+/**/.sass-cache
+/front/app/assets/style/**/*.css
+/front/app/assets/style/**/*.css.map
