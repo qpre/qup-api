@@ -3,11 +3,6 @@ QPRecipes.RecipesView = Ember.View.extend
   
   willAnimateIn : () ->
       @.$el.addClass 'fadeInLeft'
-      @.$el.find('.recipe-card__image-wrapper').css {
-        'background': 'url("http://lorempixel.com/400/200/food") no-repeat'
-        'background-size': '100%'
-        'background-position': 'center center'
-      }
 
   animateIn : (done) ->
     Em.run.later @, () =>

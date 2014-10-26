@@ -23,4 +23,4 @@ getURL = (url) ->
         
 Ember.Handlebars.helper 'add-background-image', (url) ->
   url = Handlebars.Utils.escapeExpression url
-  new Handlebars.SafeString "<div class=\"image\" style=\"background: url('#{url}') 50% 50% / 100% no-repeat;\"></div>"
+  new Handlebars.SafeString "<div class=\"image\" style=\"background: url('#{url}') 50% 50% / 100%;\"></div>"

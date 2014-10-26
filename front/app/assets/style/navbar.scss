@@ -1,11 +1,11 @@
 .qup-nav {
-	background-color: #fcfcfc;
-	border: none;
+  background-color: #fcfcfc;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.qup-nav>.container>.container-fluid {
-	border-bottom: 1px solid #333;
-	border-radius: 0px;
+.qup-nav > .container > .container-fluid {
+  border-radius: 0px;
 }
 
 .navbar-brand {
