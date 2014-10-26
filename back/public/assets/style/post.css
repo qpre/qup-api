@@ -1,11 +1,10 @@
 .article-container {
   margin: 20px;
   border-radius: 10px;
-  border: 1px solid #333;
+  border: 1px solid rgba(0, 0, 0, 0.9);
   background-color: white;
   overflow: hidden; }
   .article-container .post-header {
-    border-top-radius: 10px;
     display: block;
     position: relative;
     text-align: center;

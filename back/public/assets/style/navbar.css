@@ -1,7 +1,7 @@
 .qup-nav {
   background-color: #fcfcfc;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
 
 .qup-nav > .container > .container-fluid {
   border-radius: 0px; }
