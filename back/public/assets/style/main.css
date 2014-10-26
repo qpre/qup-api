@@ -1,0 +1,15 @@
+body {
+  background-color: #292f33;
+  color: #404040;
+  padding-top: 57px; }
+
+.footer > .container > .container-fluid {
+  border-top: 1px solid #333;
+  line-height: 60px; }
+
+html, body,
+body > .ember-view {
+  height: 100%;
+  min-height: 100%; }
+
+/*# sourceMappingURL=main.css.map */

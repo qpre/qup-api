@@ -1,0 +1,36 @@
+.article-container {
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background-color: white;
+  overflow: hidden; }
+  .article-container .post-header {
+    border-top-radius: 10px;
+    display: block;
+    position: relative;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #1e2224; }
+    .article-container .post-header > h1 {
+      color: white;
+      font-family: 'Bentham', serif;
+      text-shadow: 1px 1px black;
+      font-size: 50px;
+      font-weight: 300; }
+    .article-container .post-header .keywords {
+      color: white; }
+      .article-container .post-header .keywords span {
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.8); }
+    .article-container .post-header .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0.25; }
+
+/*# sourceMappingURL=post.css.map */

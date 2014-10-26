@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAO;EACN,UAAU,EAAE,IAAI;;AAGjB,UAAW;EACP,gBAAgB,EAAE,WAAW",
+"sources": ["../../../../front/app/assets/style/reset.scss"],
+"names": [],
+"file": "reset.css"
+}
