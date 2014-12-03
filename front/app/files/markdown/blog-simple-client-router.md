@@ -5,7 +5,9 @@
 ## Why ?
 
 If you've been building apps for the web recently, you surely noticed that the main trend is to fully separate frontend and backend of the web stack.
+
 Having the frontend more or less behaving as a single page application, and your backend simply exposing APIs for your frontend to feed on. As the server doesn't serve pages anymore, this kind of web applications tend to break the navigation, and thus the user experience (Go on and hit the back button...)
+
 Most of the frameworks available are providing full-featured routers amongst all their features. 
 But what if you want to build a light-weight website, that doesn't require any extended feature (e.g: an online Resume) ?
 
@@ -30,7 +32,13 @@ An interesting URL feature is the '#' char, what you pass afterwards is readable
 
 ## En Route !
 
-Okay, open your favourite music player, put on *Route 66* by the *Rolling Stones*, and let's write our router.
+Okay, open your favourite music streamer, put on *Route 66* by the *Rolling Stones*, and let's write our router.
 
+### Basics
+Our Router's job is, eventually, to handle URLs as routes, therefore we'll need to store have an array of route objects. Also the basic for any website: having a root route.
 
+I usually use this class as an extend to a Singleton class as the router is unique to the application, but might be used from anywhere within the application. This part ain't included 
 
+```coffeescript
+class Router
+```
