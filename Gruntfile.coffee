@@ -1,4 +1,4 @@
-LIVERELOAD_PORT = 35729
+LIVERELOAD_PORT = 35732
 lrSnippet = require("connect-livereload")(port: LIVERELOAD_PORT)
 mountFolder = (connect, dir) ->
   connect.static require("path").resolve(dir)

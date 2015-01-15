@@ -9,7 +9,7 @@ QPRecipes.Post = DS.Model.extend {
 	# computed properties :
   body: Ember.computed () -> 
     if @get 'bodyPath'
-      getURL("files/markdown/#{@get('bodyPath')}").then((result) => @set('body', result))
+      getURL("files/markdown/#{@get('bodyPath')}").then (result) => @set 'body', result
       "Loading..."
     else
       "empty"

@@ -1,7 +1,8 @@
 var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8721deb1bb245d4d1ad57c':{}}},'templates':{}},'extern':{'bootstrap':{'css':{},'fonts':{},'js':{}},'highlight':{'styles':{}}},'files':{'markdown':{}},'src':{'controllers':{},'models':{},'routes':{},'views':{},'xfixtures':{}}};
 
 (function() {
-  var QPRecipes, getURL, showdown;
+  var QPRecipes, formatMarkdown, getURL, highlightSyntax,
+    _this = this;
 
   window.QPRecipes = QPRecipes = Ember.Application.create();
 
@@ -9,10 +10,24 @@ var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8
     return moment(date).fromNow();
   });
 
-  showdown = new Showdown.converter();
-
-  Ember.Handlebars.helper('format-markdown', function(input) {
+  formatMarkdown = function(input) {
+    var showdown;
+    showdown = new Showdown.converter();
     return new Handlebars.SafeString(showdown.makeHtml(input));
+  };
+
+  highlightSyntax = function(input) {
+    return new Handlebars.SafeString($('pre code').each(function(i, e) {
+      return hljs.highlightBlock(e);
+    }));
+  };
+
+  Ember.Handlebars.helper('format-markdown', formatMarkdown);
+
+  Ember.Handlebars.helper('highlight-syntax', highlightSyntax);
+
+  Ember.Handlebars.helper('format-article', function(input) {
+    return formatMarkdown(highlightSyntax(input));
   });
 
   getURL = function(url) {

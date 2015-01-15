@@ -1,10 +1,19 @@
 Ember.Handlebars.helper 'format-date', (date) ->
     moment(date).fromNow()
 
-showdown = new Showdown.converter()
+formatMarkdown = (input) =>
+  showdown = new Showdown.converter()
+  new Handlebars.SafeString showdown.makeHtml(input)
 
-Ember.Handlebars.helper 'format-markdown', (input) ->
-    new Handlebars.SafeString showdown.makeHtml(input)
+highlightSyntax = (input) =>
+  new Handlebars.SafeString $('pre code').each (i, e) -> hljs.highlightBlock(e)
+
+Ember.Handlebars.helper 'format-markdown', formatMarkdown
+
+Ember.Handlebars.helper 'highlight-syntax', highlightSyntax
+
+Ember.Handlebars.helper 'format-article', (input) ->
+  formatMarkdown highlightSyntax(input)
 
 getURL = (url) ->
     new Ember.RSVP.Promise (resolve, reject) ->
