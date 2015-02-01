@@ -13,46 +13,36 @@
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
-<body class='qup'>
-  
+<body>
   <script type="text/x-handlebars" data-template-name="application">
-    <div class="navbar qup-nav navbar-fixed-top animated fadeInDown" role="navigation">
-      <div class="container">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <span class="navbar-brand"><strong> { <span>QuP</span> }</strong></span>
-          </div>
-          <ul class="nav navbar-nav">
-            <li>
-              {{#link-to 'recipes' class='qup-btn-menu'}}
-              <i class='glyphicon glyphicon-cutlery'></i>
-              <span class='tag'>Recipes</span>
-              {{/link-to}}
-            </li>
-            <li>
-              {{#link-to 'posts' class='qup-btn-menu'}}
-              <i class='glyphicon glyphicon-cutlery'></i>
-              <span class='tag'>Blog</span>
-              {{/link-to}}
-            </li>
-          </ul>
-	  
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="#" class='qup-btn-menu'>
-                <i class='glyphicon glyphicon-user'></i>
-                <span class='tag'>Who Am I ?</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      {{outlet}}
+    <div class='row'>
+      <section class='col-sm-3 col-md-2 sidebar' role='navigation'>
+        <ul class='nav-stacked'>
+          <li class='presenter'>
+            <img class='photo'>
+          </li>
+          <li>Quentin Pré</li>
+        </ul>
+        <ul class="nav nav-stacked">
+          <li>
+            {{#link-to 'recipes' class='qup-btn-menu'}}
+            <span class='tag'>Recipes</span>
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'posts' class='qup-btn-menu'}}
+            <span class='tag'>Blog</span>
+            {{/link-to}}
+          </li>
+        </ul>
+      </section>
+
+      <section class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main'>
+        {{outlet}}
+      </section>
     </div>
   </script>
-  
+
   <script type="text/x-handlebars" data-template-name="posts">
     <div class="jumbotron">
       <div class="row">
@@ -60,8 +50,8 @@
         <div class='col-xs-6 col-md-4'>
           {{#link-to 'post' post}}
           <div class="recipe-card">
-	    <div class='overlay'></div>
-	    {{add-background-image post.bgPath}}
+      <div class='overlay'></div>
+      {{add-background-image post.bgPath}}
             <div class="recipe-card__content">
               <p>{{post.title}}</p>
             </div>
@@ -79,7 +69,7 @@
         
         <div class='post-header'>
           {{add-background-image this.bgPath}}
-  	<h1>{{title}}</h1>
+    <h1>{{title}}</h1>
           <div class='keywords'>
             {{#each tag in this.tags}}
             <span>{{tag}}</span>
@@ -100,8 +90,8 @@
         <div class='col-xs-6 col-md-4'>
           {{#link-to 'recipe' recipe}}
           <div class="recipe-card">
-      	    <div class='overlay'></div>
-      	    {{add-background-image recipe.bgPath}}
+            <div class='overlay'></div>
+            {{add-background-image recipe.bgPath}}
             <div class="recipe-card__content">
               <p>{{recipe.title}}</p>
             </div>

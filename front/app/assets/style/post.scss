@@ -1,5 +1,5 @@
 .article-container {
-  margin: 20px;
+  margin: 20px 40px 40px 20px;
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.9);
   background-color: white;
@@ -43,6 +43,18 @@
         width: 100%;
       
         opacity: 0.25;
+    }
+  }
+
+  .jumbotron {
+    max-width: 800px;
+    margin: auto;
+   
+    p {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 35px;
     }
   }
 }

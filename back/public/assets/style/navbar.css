@@ -1,3 +1,20 @@
+.sidebar {
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  min-height: 100%; }
+  .sidebar .presenter {
+    width: 140px;
+    margin: auto;
+    text-align: center;
+    padding-top: 25px;
+    padding-left: -40px; }
+    .sidebar .presenter .photo {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      border-radius: 10px; }
+
 .qup-nav {
   background-color: #fcfcfc;
   border: none;
