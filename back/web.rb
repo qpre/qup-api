@@ -5,5 +5,5 @@ get '/' do
 end
 
 get '/wip' do
-  redirect '/index2.html'
+  redirect '/public/index2.html'
 end
