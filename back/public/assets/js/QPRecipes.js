@@ -144,19 +144,22 @@ var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8
 
   QPRecipes.PostView = Ember.View.extend({
     classNames: ['post', 'animated'],
+    animations: {
+      "in": 'fadeInDown',
+      out: 'fadeOutDown'
+    },
     willAnimateIn: function() {
-      this.$el.addClass('fadeInRight');
-      return console.log(this.$el.find('.image'));
+      debugger;      return this.$el.addClass(this.get('animations')["in"]);
     },
     animateIn: function(done) {
       var _this = this;
       return Em.run.later(this, function() {
-        _this.$el.removeClass('fadeInRight');
+        debugger;        _this.$el.removeClass(_this.get('animations')["in"]);
         return done();
       }, 1000);
     },
     willAnimateOut: function() {
-      return this.$el.addClass('fadeOutLeft');
+      return this.$el.addClass(this.get('animations').out);
     },
     animateOut: function(done) {
       return Em.run.later(this, done, 1000);
@@ -168,16 +171,22 @@ var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8
 
   QPRecipes.PostsView = Ember.View.extend({
     classNames: ['posts', 'animated'],
-    willAnimateIn: function() {},
+    animations: {
+      "in": 'fadeInDown',
+      out: 'fadeOutDown'
+    },
+    willAnimateIn: function() {
+      return this.$el.addClass(this.get('animations')["in"]);
+    },
     animateIn: function(done) {
       var _this = this;
       return Em.run.later(this, function() {
-        _this.$el.removeClass('fadeInLeft');
+        _this.$el.removeClass(_this.get('animations')["in"]);
         return done();
       }, 1000);
     },
     willAnimateOut: function() {
-      return this.$el.addClass('fadeOutLeft');
+      return this.$el.addClass(this.get('animations').out);
     },
     animateOut: function(done) {
       return Em.run.later(this, done, 1000);
@@ -186,8 +195,12 @@ var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8
 
   QPRecipes.RecipeView = Ember.View.extend({
     classNames: ['recipe', 'animated'],
+    animations: {
+      "in": 'fadeInDown',
+      out: 'fadeOutDown'
+    },
     willAnimateIn: function() {
-      this.$el.addClass('fadeInRight');
+      this.$el.addClass(this.get('animations')["in"]);
       console.log(this.$el.find('.image'));
       return this.$el.find('.image').css({
         'background': 'url("http://lorempixel.com/400/200/food") no-repeat',
@@ -198,12 +211,12 @@ var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8
     animateIn: function(done) {
       var _this = this;
       return Em.run.later(this, function() {
-        _this.$el.removeClass('fadeInRight');
+        _this.$el.removeClass(_this.get('animations')["in"]);
         return done();
       }, 1000);
     },
     willAnimateOut: function() {
-      return this.$el.addClass('fadeOutLeft');
+      return this.$el.addClass(this.get('animations').out);
     },
     animateOut: function(done) {
       return Em.run.later(this, done, 1000);
@@ -215,18 +228,22 @@ var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8
 
   QPRecipes.RecipesView = Ember.View.extend({
     classNames: ['recipes', 'animated'],
+    animations: {
+      "in": 'fadeInDown',
+      out: 'fadeOutDown'
+    },
     willAnimateIn: function() {
-      return this.$el.addClass('fadeInLeft');
+      return this.$el.addClass(this.get('animations')["in"]);
     },
     animateIn: function(done) {
       var _this = this;
       return Em.run.later(this, function() {
-        _this.$el.removeClass('fadeInLeft');
+        _this.$el.removeClass(_this.get('animations')["in"]);
         return done();
       }, 1000);
     },
     willAnimateOut: function() {
-      return this.$el.addClass('fadeOutLeft');
+      return this.$el.addClass(this.get('animations').out);
     },
     animateOut: function(done) {
       return Em.run.later(this, done, 1000);
