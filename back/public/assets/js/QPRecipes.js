@@ -1,10 +1,27 @@
 var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8721deb1bb245d4d1ad57c':{}}},'templates':{}},'extern':{'bootstrap':{'css':{},'fonts':{},'js':{}},'highlight':{'styles':{}}},'files':{'markdown':{}},'src':{'controllers':{},'models':{},'routes':{},'views':{},'xfixtures':{}}};
 
 (function() {
-  var QPRecipes, formatMarkdown, getURL, highlightSyntax,
+  var QPRecipes, QUPFixed, formatMarkdown, getURL, highlightSyntax,
     _this = this;
 
   window.QPRecipes = QPRecipes = Ember.Application.create();
+
+  QUPFixed = false;
+
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() >= $('.presenter').height() && !QUPFixed) {
+      $('.navbar.navbar-default').addClass('navbar-fixed-top');
+      $('.presenter').removeClass('show');
+      $('.presenter-min').addClass('show');
+      QUPFixed = true;
+    }
+    if ($(window).scrollTop() < $('.presenter').height() && QUPFixed) {
+      $('.navbar.navbar-default').removeClass('navbar-fixed-top');
+      $('.presenter').addClass('show');
+      $('.presenter-min').removeClass('show');
+      return QUPFixed = false;
+    }
+  });
 
   Ember.Handlebars.helper('format-date', function(date) {
     return moment(date).fromNow();
