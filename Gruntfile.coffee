@@ -4,7 +4,7 @@ mountFolder = (connect, dir) ->
   connect.static require("path").resolve(dir)
 
 module.exports = (grunt) ->
-  
+
   # Project configuration.
   BANNER =  "/* Recipes : " + (Date.now()).toString() + " */"
   GROUPS = {
@@ -16,7 +16,7 @@ module.exports = (grunt) ->
   APPPATH='front/app'
   grunt.initConfig
     pkg: grunt.file.readJSON("package.json")
-    
+
     toaster:
       debug:
         minify: false
@@ -30,7 +30,7 @@ module.exports = (grunt) ->
         # bare: true
         folders: GROUPS
         release: "#{BUILDPATH}/assets/js/#{BIN}.min.js"
-        
+
     handlebars:
       all:
         options:
@@ -39,7 +39,7 @@ module.exports = (grunt) ->
               filePath.replace(/^QPRecipes\/assets\/templates\//, "").replace /\.hbs$/, ""
         files:
           "back/public/assets/js/QPRecipes.templates.js": ["#{APPPATH}/assets/templates/**/*.hbs"]
-          
+
     sass:
       dist:{
         files:[{
@@ -50,14 +50,14 @@ module.exports = (grunt) ->
           ext: '.css',
           }]
       }
-          
+
     cssmin:
       dist:
         options:
           banner: '/* QPRecipes */'
         files:
           'back/public/assets/style/QPRecipes.min.css': ['back/public/assets/style/**/*.css']
-      
+
     copy:
       app:
         files: [
@@ -93,7 +93,7 @@ module.exports = (grunt) ->
 
     clean: ["back/public"]
 
-    
+
     # this, is orgasmically neat
     watch:
       bower:
@@ -142,7 +142,7 @@ module.exports = (grunt) ->
     open:
       server:
         path: "http://localhost:<%= connect.options.port %>"
-     
+
   # Load plugins
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-coffee"
@@ -155,7 +155,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-handlebars'
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-cssmin'
-  
+
   # Tasks
   grunt.registerTask "build", [
     "clean"
@@ -171,6 +171,7 @@ module.exports = (grunt) ->
   grunt.registerTask "server", (target) ->
     if target is "build"
       return grunt.task.run([
+        "clean"
         "build"
         "open"
         "connect:dist:keepalive"

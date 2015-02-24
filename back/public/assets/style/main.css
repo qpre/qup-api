@@ -1,5 +1,5 @@
 body {
-  background-color: #292f33;
+  background-color: #131A1F;
   color: #404040; }
   body.qup {
     padding-top: 57px; }
@@ -12,6 +12,30 @@ html, body,
 body > .ember-view {
   height: 100%;
   min-height: 100%;
-  font-family: "Helvetica Neue",HelveticaNeue,Helvetica,TeXGyreHeros,FreeSans,"Nimbus Sans L","Liberation Sans",Arial,sans-serif; }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+
+.presenter {
+  color: #FFFEFE;
+  font-size: 2em;
+  letter-spacing: .02em;
+  margin-bottom: 0.4em;
+  font-weight: 200;
+  padding-top: 30px;
+  text-align: center; }
+  .presenter .name {
+    padding: 10px; }
+  .presenter .photo {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    background-image: url(https://pbs.twimg.com/profile_images/462597578631024640/2NvZpDsG.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid #3F4146; }
+    .presenter .photo:hover {
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.1); }
 
 /*# sourceMappingURL=main.css.map */

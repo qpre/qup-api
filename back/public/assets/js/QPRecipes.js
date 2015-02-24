@@ -149,12 +149,12 @@ var QPRecipes = {'assets':{'img':{},'style':{'.sass-cache':{'34a425aafa7dafd66f8
       out: 'fadeOutDown'
     },
     willAnimateIn: function() {
-      debugger;      return this.$el.addClass(this.get('animations')["in"]);
+      return this.$el.addClass(this.get('animations')["in"]);
     },
     animateIn: function(done) {
       var _this = this;
       return Em.run.later(this, function() {
-        debugger;        _this.$el.removeClass(_this.get('animations')["in"]);
+        _this.$el.removeClass(_this.get('animations')["in"]);
         return done();
       }, 1000);
     },

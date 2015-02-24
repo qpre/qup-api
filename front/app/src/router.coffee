@@ -7,4 +7,4 @@ QPRecipes.Router.map ()->
   @resource 'recipe', {path: '/recipes/:recipe_id'}
 
 QPRecipes.Router.reopen
-        rootURL: '/posts/'
+  rootURL: '/posts/'

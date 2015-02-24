@@ -6,13 +6,11 @@ QPRecipes.PostView = Ember.View.extend
   }
 
   willAnimateIn : () ->
-    debugger
     @.$el.addClass @get('animations').in
 
 
   animateIn : (done) ->
     Em.run.later @, () =>
-      debugger
       @.$el.removeClass @get('animations').in
       done()
     ,1000
