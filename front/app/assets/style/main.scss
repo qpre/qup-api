@@ -43,10 +43,11 @@ body > .ember-view {
 		background-image: url(https://avatars1.githubusercontent.com/u/2156263?v=3&s=140);
 		background-size: cover;
 		border-radius: 50%;
-		border: 1px solid #3F4146;
+
+		transition: box-shadow 300ms;
 
 		&:hover {
-			box-shadow: 0 0 0 5px rgba(255,255,255,0.1);
+			box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
 		}
 	}
 
@@ -86,10 +87,11 @@ body > .ember-view {
 		background-image: url(https://avatars1.githubusercontent.com/u/2156263?v=3&s=140);
 		background-size: cover;
 		border-radius: 50%;
-		border: 1px solid #3F4146;
+
+		transition: box-shadow 300ms;
 
 		&:hover {
-			box-shadow: 0 0 0 5px rgba(255,255,255,0.1);
+			box-shadow: 0 0 0 7px rgba(255,255,255,0.1);
 		}
 
 	}
