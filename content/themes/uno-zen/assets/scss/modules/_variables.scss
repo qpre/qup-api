@@ -13,7 +13,7 @@ $red                : #c0392b;
 $purple             : #493252;
 $slate              : #3d4260;
 
-$primary-color      : lighten(#156f78, 20%);
+$primary-color      : lighten(#4EA1A9, 20%);
 $secondary-color    : $gray-dark;
 
 $link-color         : $gray-darkest;
@@ -24,8 +24,8 @@ $serif-font         : 'Roboto Slab', serif;
 $code-font          : Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 $quote-font         : "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
 
-$cover-color-first  : rgba(31, 34, 36, 0.40);
-$cover-color-second : rgba(0, 0, 0, 0.7);
+$cover-color-first  : rgba(31, 34, 36, .40);
+$cover-color-second : rgba(0, 0, 0, .7);
 
 $border-radius      : 3px;
 
