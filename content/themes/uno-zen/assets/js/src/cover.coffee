@@ -2,7 +2,7 @@
 
 $ ->
   el = document.body
-  isOpen = (location.pathname isnt '') or (location.hash is '#open')
+  isOpen = true
 
   _expand = ->
     Uno.loadingBar 'hide'
