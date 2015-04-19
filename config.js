@@ -11,7 +11,17 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://qup.re',
-        mail: {},
+        mail: {
+          transport: 'SMTP',
+          host: 'smtp.mandrillapp.com',
+          options: {
+            service: 'Mandrill',
+            auth: {
+              user: process.env.MANDRILL_USERNAME,
+              pass: process.env.MANDRILL_APIKEY
+            }
+          }
+        },
         database: {
           client: 'postgres',
           connection: {
