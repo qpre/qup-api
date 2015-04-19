@@ -1,1 +1,1 @@
-web: bundle exec ruby back/web.rb -p $PORT
+web: node index.js --production
