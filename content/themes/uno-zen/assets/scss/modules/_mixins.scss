@@ -2,7 +2,7 @@
   background: linear-gradient(150deg, $cover-color-first 30%, $cover-color-second 70%), url(/assets/img/cover.jpg) no-repeat center;
   background-attachment: fixed;
   background-size: cover;
-}
+ }
 @mixin center-absolute {
   display: flex;
   justify-content: center;
@@ -19,7 +19,6 @@
   color: $gray-lightest;
   text-shadow: none;
   letter-spacing: 1px;
-  border: 1px solid $gray-lightest;
   border-radius: 20px;
   opacity: .8;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +27,12 @@
     opacity: 1;
   }
 }
+
+@mixin btn-cover-with-border {
+  @extend btn-cover;
+  border: 1px solid $gray-lightest;
+}
+
 @mixin placeholder {
   ::-webkit-input-placeholder {
     @content

@@ -1,6 +1,7 @@
 # Uno Zen for Ghost
 
-[![Gittip](https://img.shields.io/badge/Ghost-0.5.x-brightgreen.svg?style=flat-squared)]()
+[![Gittip](https://img.shields.io/badge/Latest%20stable-2.2.1-green.svg?style=flat-squared)]()
+[![Gittip](https://img.shields.io/badge/Ghost-0.6.x-brightgreen.svg?style=flat-squared)]()
 [![Gittip](http://img.shields.io/gittip/Kikobeats.svg?style=flat-squared)](https://www.gittip.com/Kikobeats)
 
 > Minimalist and Elegant theme for Ghost.
@@ -31,8 +32,16 @@ For more information check [changelog](https://github.com/Kikobeats/uno-zen/blob
 You can see a demo in my [blog](http://blog.kikobeats.com). Also you can check the [styleguide](http://kikobeats.com/styleguide) to view how it looks.
 
 ## Showcase
- 
-I want to create a showcase with blog of the users. Please, [Add your blog!](https://github.com/Kikobeats/uno-zen/issues/new?title=Add%20my%20blog%20into%20showcase&body=The%20URL%20of%20my%20blog%20is:%20).
+
+<div align="center">
+<a target="blank" href="http://kikobeats.com"><img src="http://i.imgur.com/fvRg0fg.png"></a>
+<a target="blank" href="http://www.evilsocket.net"><img src="http://i.imgur.com/qanAbQf.png"></a>
+<a target="blank" href="http://pupboss.com"><img src="http://i.imgur.com/0AeVKgB.png"></a>
+</br>
+</br>
+</div>
+
+Do you want appear here? Please, [add your blog!](https://github.com/Kikobeats/uno-zen/issues/new?title=Add%20my%20blog%20into%20showcase&body=The%20URL%20of%20my%20blog%20is:%20).
 
 ## Documentation
 
