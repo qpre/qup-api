@@ -8,7 +8,7 @@
     "url": "git+https://github.com/qpre/Imperium.git"
   },
   "scripts": {
-    "preinstall": "npm install grunt-cli",
+    "preinstall": "npm install grunt-cli flow-bin",
     "postinstall": "grunt build",
     "start": "node server.js"
   },
