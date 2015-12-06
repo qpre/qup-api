@@ -15,6 +15,17 @@ module.exports = function (grunt) {
       },
     },
 
+    uglify: {
+      options: {
+        sourceMap: true,
+      },
+      dist: {
+        files: {
+          'dist/qup.min.js': 'dist/qup.js',
+        }
+      }
+    },
+
     // Browserify ( babel -> browserify )
     browserify: {
       options: {
@@ -93,5 +104,5 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['build', 'connect', 'watch']);
 
   // build task checks code then builds artifacts
-  grunt.registerTask('build', ['shell:flow', 'clean', 'browserify', 'copy']);
+  grunt.registerTask('build', ['shell:flow', 'clean', 'browserify', 'copy', 'uglify']);
 };
