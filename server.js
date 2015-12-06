@@ -1,9 +1,9 @@
-import express     from 'express';
-import compression from 'compression';
+var express     = require('express'),
+    compression = require('compression');
 
-let app = express();
+var app = express();
 
-let shouldCompress = function(req, res) {
+var shouldCompress = function(req, res) {
   if (req.headers['x-no-compression']) {
     // don't compress responses with this request header
     return false;
@@ -16,6 +16,6 @@ let shouldCompress = function(req, res) {
 app.use(compression({filter: shouldCompress}))
 app.use(express.static('dist'));
 
-let server = app.listen(process.env.PORT || 8080, () => {
+var server = app.listen(process.env.PORT || 8080, function() {
   console.log('server started');
 });
