@@ -19,16 +19,14 @@ To do so, I used Swifter's codebase as the first base of inspiration (even thoug
 Octopus
 =======
 
-Goal
-----
+**Goal :**
 
 Octopus's goal is to provide an easy to use framework for server-side development.
 It will be shaped with the inspiration given by nowadays re-birth of functional programming, and tainted in [Ruby's Sinatra](http://www.sinatrarb.com/) and [NodeJS's Express](http://expressjs.com/) declarative style.
 
 It currently consists of a simple cross-platform socket's implementation, but I hope to provide at least a Router with basic POST and GET method handlers and static files delivery over the next weeks.
 
-why the name ?
---------------
+**why the name ?**
 
 Octopus's will be using [Grand Central Dispatch](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/) to handle concurency. Each thread looks to me like a new tentacula to a bigger organism, therefore the name.
 
