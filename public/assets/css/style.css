@@ -109,6 +109,7 @@ a:hover {
 
 .index .column.left li:not(:first-child):hover,
 .article-item:hover {
+  transition: all 600ms ease-in-out;
     background-color: #f8f8f8;
     cursor: pointer;
 }
