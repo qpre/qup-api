@@ -12,12 +12,16 @@ export class Layout extends React.Component {
   }
 
   render() {
-    var goToIndex = () => {
+    let goToIndex = () => {
       Router.navigate('');
     };
 
-    var goToArticles = () => {
+    let goToArticles = () => {
       Router.navigate('articles');
+    };
+
+    let goToAbout = () => {
+      Router.navigate('about');
     };
 
     return <div className='wrapper animated fadeInDown'>
@@ -26,7 +30,7 @@ export class Layout extends React.Component {
 
         <ul>
           <li onClick={goToArticles}>Articles</li>
-          <li>About</li>
+          <li onClick={goToAbout}>About</li>
         </ul>
       </div>
     </div>;

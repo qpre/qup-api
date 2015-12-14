@@ -11,6 +11,7 @@ import {ApplicationLayout}  from './layouts/application';
 import * as Index     from './layouts/index';
 import * as Articles  from './layouts/articles';
 import * as Article   from './layouts/article';
+import * as About     from './layouts/about';
 import * as Router    from './lib/router';
 
 export let ApplicationView;
@@ -26,6 +27,12 @@ let routes = [
     path: 'articles',
     handler: (params) => {
       ApplicationView.yield(Articles.Layout, params);
+    },
+  },
+  {
+    path: 'about',
+    handler: (params) => {
+      ApplicationView.yield(About.Layout, params);
     },
   },
   {

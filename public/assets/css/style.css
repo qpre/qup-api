@@ -135,6 +135,10 @@ a:hover {
   font-weight: 500;
 }
 
+.subtitle + p {
+  margin-top: 0;
+}
+
 .articles {
   padding:    0;
   box-sizing: border-box;
@@ -153,7 +157,7 @@ a:hover {
 
 .articles .article-item h2 {
   position: absolute;
-  left: 25px
+  left: 25px;
   bottom: 25px;
 
   color: white;
@@ -273,7 +277,7 @@ h1 .subtitle{
 
 }
 
-.article {
+.article, .about {
     width: 36em;
     margin-left: auto;
     margin-right: auto;
@@ -292,7 +296,13 @@ h1 .subtitle{
     text-align:         right;
 }
 
-.article h1 {
+.article h1,
+.about h1 {
     font-size:   34px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size:   24px;
     font-weight: 600;
 }

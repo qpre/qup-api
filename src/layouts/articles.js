@@ -19,13 +19,14 @@ export class Layout extends React.Component {
       };
     };
 
-    let odd = false;
+    let odd = true;
 
     return <div className='wrapper'>
       <ul className='articles'>
         {articles.map((article) => {
           let liClass = 'article-item animated ';
 
+          odd = !odd;
           liClass += (odd) ? 'fadeInRight' : 'fadeInLeft';
 
           return <li className={liClass} onClick={goToArticle(article.id)}>
