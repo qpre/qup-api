@@ -34,7 +34,7 @@ export class Layout extends React.Component {
         } else {
           debugger;
         }
-      }
+      };
 
       // starting transaction
       xhr.send();
@@ -57,9 +57,9 @@ export class Layout extends React.Component {
 
   render() {
     return <div className='wrapper'>
-      <div className='article'>
-      <h1 className='animated fadeInLeft'>{this.state.article && this.state.article.title}</h1>
-      <p className='content animated fadeInRight' dangerouslySetInnerHTML={{__html: converter.makeHtml(this.state.content)}}></p>
+      <div className='article animated fadeIn'>
+      <h1>{this.state.article && this.state.article.title}</h1>
+      <p dangerouslySetInnerHTML={{__html: converter.makeHtml(this.state.content)}}></p>
       <ReactDisqusThread shortname='qpre' identifier={`qup-article-${this.state.article.id}`} title={this.state.article && this.state.article.title} url={window.location.href} />
       </div>
     </div>;
