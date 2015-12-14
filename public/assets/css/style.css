@@ -1,6 +1,9 @@
 body {
-    font-family:        'Raleway', 'Roboto', sans-serif;
+    /*font-family:     'Raleway', 'Roboto', sans-serif; */
+    font-family:        Georgia, sans-serif;
     background-color:   white;
+
+    line-height: 1.5em;
 
     -webkit-font-smoothing: antialiased;
     font-smoothing:         antialiased;
