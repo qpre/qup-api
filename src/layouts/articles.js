@@ -29,6 +29,7 @@ export class Layout extends React.Component {
           liClass += (odd) ? 'fadeInRight' : 'fadeInLeft';
 
           return <li className={liClass} onClick={goToArticle(article.id)}>
+            <div className='mask'></div>
             <h2>{article.title}</h2>
             <div className='cover-photo' style={{backgroundImage: `url(${article.cover})`}}></div>
           </li>;

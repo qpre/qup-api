@@ -241,6 +241,38 @@ h1 .subtitle{
 }
 
 
+.articles .article-item {
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.articles .article-item:hover .mask {
+  opacity: 1;
+}
+
+.articles .article-item .mask {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  opacity: 0;
+  overflow: hidden;
+
+  background-color: rgba(0,0,0,0.7);
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
 .article {
     width: 36em;
     margin-left: auto;
@@ -259,8 +291,6 @@ h1 .subtitle{
     margin-left:        -58px;
     text-align:         right;
 }
-
-
 
 .article h1 {
     font-size:   34px;
