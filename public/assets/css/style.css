@@ -1,5 +1,5 @@
 body {
-    /*font-family:     'Raleway', 'Roboto', sans-serif; */
+    /* font-family:     'Raleway', 'Roboto', sans-serif; */
     font-family:        Georgia, sans-serif;
     background-color:   white;
 
@@ -207,7 +207,6 @@ a:hover {
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .navbar, .brand, .btn-simple {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing:  antialiased;
-
 }
 
 /*           Typography          */
@@ -218,7 +217,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4{
 }
 
 h1, .h1 {
-    font-size: 52px;
+    font-size:   52px;
+    line-height: 1.6em;
 
 }
 h2, .h2{
@@ -280,8 +280,8 @@ h1 .subtitle{
 }
 
 .article, .about {
-    width: 36em;
-    margin-left: auto;
+    width:        40em;
+    margin-left:  auto;
     margin-right: auto;
 }
 
@@ -302,6 +302,7 @@ h1 .subtitle{
 .about h1 {
     font-size:   34px;
     font-weight: 600;
+    line-height: 1em;
 }
 
 h2 {
