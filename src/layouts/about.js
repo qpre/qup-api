@@ -18,19 +18,19 @@ export class Layout extends React.Component {
   render() {
     return <div className='wrapper'>
       <div className='about animated fadeIn'>
-        <h1>Bonjour, I&rsquo;m Quentin.</h1>
+        <h2>Bonjour, I&rsquo;m Quentin.</h2>
         <p>
           I&rsquo;m a Software Engineer at <a target='_blank' href='//adikteev.com'>Adikteev</a> in Paris.
           Where I&rsquo;m in charge of the development of the company&rsquo;s 'SDK': a massively distributed script managing the lifetime of multiple ad formats in the browser.
         </p>
         <br/>
-        <h2>Work Experiences</h2>
+        <h3>Work Experiences</h3>
         <hr/>
         <ul>
           <li>JOUL</li>
           <li>Mojaro</li>
         </ul>
-        <h2>Education</h2>
+        <h3>Education</h3>
         <hr/>
         <ul>
           <li>EPITA</li>
