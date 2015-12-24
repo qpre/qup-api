@@ -55,6 +55,14 @@ export class Layout extends React.Component {
   componentDidMount() {
   }
 
+  componentDidUpdate() {
+    let codeNodes = document.querySelectorAll('pre code');
+
+    for (let node of codeNodes) {
+      hljs.highlightBlock(node);
+    }
+  }
+
   render() {
     return <div className='wrapper'>
       <div className='article animated fadeIn'>

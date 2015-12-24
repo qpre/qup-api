@@ -6,6 +6,11 @@ ul {
   list-style: none;
 }
 
+code {
+  background-color: #f7f7f7 !important;
+  border-radius:    5px;
+}
+
 a,
 a:focus,
 a:hover {
@@ -425,6 +430,10 @@ p h6 {
 .article h6 {
   line-height: 2.75rem;
   margin-top: 1.5rem;
+}
+
+.article h2 {
+  font-size: 150%;
 }
 
 .article > h1 {

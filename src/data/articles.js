@@ -1,5 +1,13 @@
 export let articles = [
   {
+    id:    3,
+    title: 'Building and Deploying a Swift project to Amazon EC2 with Git',
+    body:  '/assets/markdown/code-amazon-ec2-deploy-git.md',
+    tags:  'code swift amazon deploy',
+    cover: '/assets/images/swift.jpg',
+  },
+
+  {
     id:    2,
     title: 'Writing a web framework in Swift',
     body:  '/assets/markdown/swift-octopus.md',

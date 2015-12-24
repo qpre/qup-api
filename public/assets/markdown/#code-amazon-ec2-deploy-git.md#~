@@ -1,0 +1,63 @@
+Here's a quick setup on how to deploy a swift application to an EC2 instance.
+
+**note :** I'm building and deploying a swift application here, but you'll see that you can apply the same recipe for any other stack easily.
+
+![cover](/assets/images/swift.jpg =100%x*)
+
+Setup your EC2 instance
+=======================
+
+First of all you will need an EC2 instance running Ubuntu 14.04
+
+![launch instance](/assets/images/ec2-launch-instance.png =100%x*)
+
+**note :** when setting up your instance, make sure the associated security group allows for SSH connections on port 22.
+
+Install Swift on your instance
+==============================
+
+First of all you'll need to be logged in into your session,spawn a terminal an type:
+
+```shell
+$ ssh -i <path-to-your-instance-key>.pem ssh://<your-instance-public-dns-address>
+```
+
+To install swift on your instance, there is not .deb package yet, but you can do as the [official website](http://swift.org) advises:
+
+1- install the neccessary tools
+
+```shell
+$ sudo apt-get install clang libicu-dev
+```
+
+2- grab the latest package
+
+```shell
+$ wget https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-18-a/swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04.tar.gz
+```
+
+3- open it
+
+```shell
+$ tar xzf swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04.tar.gz
+$ mv swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04 swift
+```
+
+**note :** you can test it by running the REPL with `/home/ubuntu/swift/usr/bin/swift`(you can exit it at any moment by typing `:q`)
+
+Setup your git remote
+=====================
+
+To trigger our builds and deploys, we will take full advantage of git's distributed architecture.
+
+1- create the git repository:
+
+```shell
+$ mkdir my-git-remote.git
+$ cd my-git-remote.git
+$ git init --bare
+```
+
+2- Post-receive hook
+
+You now have a git remote available on your server, but for it to trigger our builds
