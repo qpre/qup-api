@@ -2,7 +2,7 @@ Here's a quick setup on how to deploy a swift application to an EC2 instance.
 
 **note :** I'm building and deploying a swift application here, but you'll see that you can apply the same recipe for any other stack easily.
 
-![cover](/assets/images/swift.jpg =100%x*)
+![cover](/assets/images/rocket-launch.jpg =100%x*)
 
 Setup your EC2 instance
 =======================
