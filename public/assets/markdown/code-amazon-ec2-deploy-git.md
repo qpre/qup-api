@@ -7,6 +7,8 @@ Here's a quick setup on how to deploy a swift application to an EC2 instance.
 Setup your EC2 instance
 =======================
 
+---
+
 First of all you will need an EC2 instance running Ubuntu 14.04
 
 ![launch instance](/assets/images/ec2-launch-instance.png =100%x*)
@@ -15,6 +17,8 @@ First of all you will need an EC2 instance running Ubuntu 14.04
 
 Install Swift on your instance
 ==============================
+
+---
 
 First of all you'll need to be logged in into your session,spawn a terminal an type:
 
@@ -50,6 +54,8 @@ $ mv swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04 swift
 
 Setup your git remote
 =====================
+
+---
 
 To trigger our builds and deploys, we will take full advantage of git's distributed architecture.
 
@@ -121,5 +127,7 @@ Any time a build passes, the previous instance will be killed and replaced by a 
 
 Questions / Remarks ?
 =====================
+
+---
 
 As this was written while actually experimenting with it, it may include a few errors, feel free to tell me if you encounter a difficulty running this "tutorial".
