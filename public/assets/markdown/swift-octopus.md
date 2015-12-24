@@ -2,8 +2,9 @@ Two weeks ago [Apple open sourced Swift](https://developer.apple.com/swift/blog/
 
 ![cover](/assets/images/swift.jpg =100%x*)
 
-Yet another web framework
-=========================
+### Yet another web framework
+
+---
 
 I won't spend so much time on why I chose Swift to write Octopus.
 When Swift first came out I felt Apple missed an occasion of making a great web development tool.
@@ -16,8 +17,9 @@ When using Swifter I felt there was something worth dig in, but I needed more, s
 
 To do so, I used Swifter's codebase as the first base of inspiration (even though I tried to make it more readable through comments and code shape, Octopus's socket handling implementation is largely inspired fro Swifter's).
 
-Octopus
-=======
+### Octopus
+
+---
 
 **Goal :**
 
@@ -30,8 +32,9 @@ It currently consists of a simple cross-platform socket's implementation, but I 
 
 Octopus's will be using [Grand Central Dispatch](https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/) to handle concurency. Each thread looks to me like a new tentacula to a bigger organism, therefore the name.
 
-Where to follow its development
-===============================
+### Where to follow its development
+
+---
 
 Octopus will always be available on [Github](http://github.com/qpre/octopus).
 

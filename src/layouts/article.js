@@ -66,7 +66,7 @@ export class Layout extends React.Component {
   render() {
     return <div className='wrapper'>
       <div className='article animated fadeIn'>
-      <h1>{this.state.article && this.state.article.title}</h1>
+      <h2>{this.state.article && this.state.article.title}</h2>
       <p dangerouslySetInnerHTML={{__html: converter.makeHtml(this.state.content)}}></p>
       <ReactDisqusThread shortname='qpre' identifier={`qup-article-${this.state.article.id}`} title={this.state.article && this.state.article.title} url={window.location.href} />
       </div>

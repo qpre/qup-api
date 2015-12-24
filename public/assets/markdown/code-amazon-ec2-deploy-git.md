@@ -4,8 +4,7 @@ Here's a quick setup on how to deploy a swift application to an EC2 instance.
 
 ![cover](/assets/images/rocket-launch.jpg =100%x*)
 
-Setup your EC2 instance
-=======================
+### Setup your EC2 instance
 
 ---
 
@@ -15,8 +14,7 @@ First of all you will need an EC2 instance running Ubuntu 14.04
 
 **note :** when setting up your instance, make sure the associated security group allows for SSH connections on port 22.
 
-Install Swift on your instance
-==============================
+### Install Swift on your instance
 
 ---
 
@@ -28,22 +26,19 @@ $ ssh -i <path-to-your-instance-key>.pem ssh://<your-instance-public-dns-address
 
 To install swift on your instance, there is not .deb package yet, but you can do as the [official website](http://swift.org) advises:
 
-1 - install the neccessary tools
--------------------------------
+##### 1 - install the neccessary tools
 
 ```bash
 $ sudo apt-get install clang libicu-dev
 ```
 
-2 - grab the latest package
---------------------------
+##### 2 - grab the latest package
 
 ```bash
 $ wget https://swift.org/builds/ubuntu1404/swift-2.2-SNAPSHOT-2015-12-18-a/swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04.tar.gz
 ```
 
-3 - open it
-----------
+##### 3 - open it
 
 ```bash
 $ tar xzf swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04.tar.gz
@@ -52,15 +47,13 @@ $ mv swift-2.2-SNAPSHOT-2015-12-18-a-ubuntu14.04 swift
 
 **note :** you can test it by running the REPL with `/home/ubuntu/swift/usr/bin/swift`(you can exit it at any moment by typing `:q`)
 
-Setup your git remote
-=====================
+### Setup your git remote
 
 ---
 
 To trigger our builds and deploys, we will take full advantage of git's distributed architecture.
 
-1 - create the git repository:
------------------------------
+##### 1 - create the git repository:
 
 ```bash
 $ mkdir -p myproject/remote.git
@@ -68,8 +61,7 @@ $ cd my-project/remote.git
 $ git init --bare
 ```
 
-2 - Post-receive hook
---------------------
+##### 2 - Post-receive hook
 
 Now that we have a git repository, we want it to do a few things:
 
@@ -112,8 +104,7 @@ kill -9 `cat /home/ubuntu/myproject/pid.file`
 /home/ubuntu/myproject/build/.build/debug/MyProjectBin $PORT & echo $! > /home/ubuntu/myproject/pid.file
 ```
 
-3 - Trigger your first deploy
-----------------------------
+##### 3 - Trigger your first deploy
 
 On your local machine, get to your project's directory and do:
 
@@ -125,8 +116,7 @@ git push ec2 +master:refs/heads/master
 This will push the current head to the new remote, which will then run your post-receive hook.
 Any time a build passes, the previous instance will be killed and replaced by a new one.
 
-Questions / Remarks ?
-=====================
+### Questions / Remarks ?
 
 ---
 
