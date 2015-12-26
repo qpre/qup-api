@@ -34,18 +34,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4{
 }
 
 h1, .h1 {
-    font-size: 52px;
-    line-height: 45px;
+    font-size: 46px;
+    line-height: 32px;
 }
 h2, .h2 {
-    font-size: 36px;
+    font-size: 32px;
 }
 h3, .h3{
-    font-size: 28px;
+    font-size: 24px;
     margin: 20px 0 10px;
 }
 h4, .h4{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 h5, .h5 {
@@ -59,8 +59,8 @@ h6, .h6{
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.6180em;
+    font-size: 14px;
+    line-height: 1.4180em;
 }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
