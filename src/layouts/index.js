@@ -37,8 +37,11 @@ export class Layout extends React.Component {
         <ul className='column right animated fadeInUp'>
           {articles.map((article) => {
             return <li className='article-item' onClick={goToArticle(article.id)}>
-              <h3>{article.title}</h3>
-              <div className='cover-photo' style={{backgroundImage: `url(${article.cover})`}}></div>
+              <div className='card'>
+                <div className='cover-photo' style={{backgroundImage: `url(${article.cover})`}}>
+                </div>
+                <h4>{article.title}</h4>
+              </div>
             </li>;
           })}
         </ul>

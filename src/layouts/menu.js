@@ -24,8 +24,8 @@ export class Layout extends React.Component {
       Router.navigate('about');
     };
 
-    return <div className='wrapper animated fadeInDown'>
-      <div className='menu'>
+    return <div className='nav-wrapper'>
+      <div className='menu animated fadeInDown'>
         <h3 onClick={goToIndex}>Quentin Pré</h3>
 
         <ul>
