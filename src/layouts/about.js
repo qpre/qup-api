@@ -18,7 +18,7 @@ export class Layout extends React.Component {
   render() {
     return <div className='wrapper'>
       <div className='about animated fadeIn'>
-        <h2>Bonjour, I&rsquo;m Quentin.</h2>
+        <h1>Bonjour, I&rsquo;m Quentin.</h1>
         <p>
           I&rsquo;m a Software Engineer at <a target='_blank' href='//adikteev.com'>Adikteev</a> in Paris.
           Where I&rsquo;m in charge of the development of the company&rsquo;s 'SDK': a massively distributed script managing the lifetime of multiple ad formats in the browser.
