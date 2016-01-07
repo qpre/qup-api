@@ -121,6 +121,11 @@ a:hover {
   background-color: white;
 }
 
+.footer {
+    min-height: 100px;
+    background-color: black;
+}
+
 .menu {
     clear:   both;
     display: block;
@@ -177,9 +182,17 @@ a:hover {
   transition: color 200ms ease-in-out;
 }
 
-.index {}
+.index {
+    display: table;
+}
+
+.row {
+    display: table-row;
+}
 
 .index .column {
+    display:    table-cell;
+    vertical-align: top;
     margin:     0;
     list-style: none;
     padding:    0;
@@ -188,9 +201,6 @@ a:hover {
 
 .index .column.left {
     width:         40%;
-
-    float:         left;
-
     border-right:  1px solid #eee;
 }
 
@@ -210,19 +220,26 @@ a:hover {
   background-color: whitesmoke;
 }
 
-.index .article-item:first-child {
-    padding-top: 1.5em;
+.index .column li.article-item {
+  padding-top:    1.0em;
+  padding-bottom: 1.0em;
 }
 
-.index .column.left li:not(:first-child):hover,
-.article-item:hover {
+.index .column li.article-item:hover {
+  background-color: white;
+}
+
+.index .article-item:first-child {
+  padding-top: 1.5em;
+}
+
+.index .column.left li:not(:first-child):hover {
   transition: all 600ms ease-out;
   background-color: white;
 }
 
 .index .column.right {
-    float: right;
-    width: 60%;
+  width: 60%;
 }
 
 .index .article-item .cover-photo {
@@ -244,6 +261,11 @@ a:hover {
   border-radius: 5px;
   background-color: white;
   overflow: hidden;
+  transition: all 500ms;
+}
+
+.index .article-item .card:hover {
+    /* box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.3); */
 }
 
 .index .article-item .card h4 {
@@ -323,7 +345,6 @@ a:hover {
 }
 
 .article, .about {
-    width:        40em;
     margin-left:  auto;
     margin-right: auto;
 }

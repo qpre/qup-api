@@ -1,4 +1,5 @@
 import * as Menu from './menu';
+import * as Footer from './footer';
 import * as React from 'react';
 
 class ApplicationComponent extends React.Component {
@@ -24,6 +25,7 @@ class ApplicationComponent extends React.Component {
     return <div className='application'>
       <Menu.Layout />
       {this.renderYield()}
+      <Footer.Layout />
     </div>;
   }
 };
