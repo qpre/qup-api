@@ -117,14 +117,18 @@ a:hover {
 }
 
 .nav-wrapper {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e0e0e0;
   background-color: white;
 }
 
-.footer {
-    min-height: 100px;
-    background-color: black;
+.footer-wrapper {
+  margin-top: 3em;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  min-height: 200px;
 }
+
+
 
 .menu {
     clear:   both;
@@ -282,6 +286,7 @@ a:hover {
 
   cursor: pointer;
 
+  border-radius: 5px;
   box-shadow: 1px 1px 5px #888;
 
   margin: 15px 0;
