@@ -3,7 +3,7 @@
 html {
   font: 14px/1.8 "Roboto", "Helvetica", "lucida grande", sans-serif, sans-serif;
   font-weight: 300;
-  background-color: whitesmoke; }
+  background-color: #F6F7F8; }
 
 body {
   color: #444; }
@@ -208,6 +208,10 @@ a:hover {
   transition: all 1200ms ease-in-out;
   cursor:     pointer;
   background-color: whitesmoke;
+}
+
+.index .article-item:first-child {
+    padding-top: 1.5em;
 }
 
 .index .column.left li:not(:first-child):hover,
