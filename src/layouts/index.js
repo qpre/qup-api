@@ -31,7 +31,7 @@ export class Layout extends React.Component {
               </p>
             </li>
             <li>
-              <h3>We are in 2015</h3>
+              <h3>We are in 2016</h3>
               <p>Did you know <a href='//youmightnotneedjquery.com' target='_blank'>You Might Not Need jQuery</a> ?</p>
             </li>
             <li>

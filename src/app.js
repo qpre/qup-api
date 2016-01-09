@@ -40,9 +40,9 @@ let routes = [
   {
     path: 'article/:id',
     handler: (params) => {
-      ApplicationView.yield(Article.Layout, params)
-    }
-  }
+      ApplicationView.yield(Article.Layout, params);
+    },
+  },
 ];
 
 window.addEventListener('load', () => {
