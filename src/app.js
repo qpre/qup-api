@@ -14,6 +14,8 @@ import * as Article   from './layouts/article';
 import * as About     from './layouts/about';
 import * as Router    from './lib/router';
 
+import {initGoogleAnalytics} from './lib/google_analytics';
+
 export let ApplicationView;
 
 let routes = [
@@ -45,5 +47,6 @@ let routes = [
 
 window.addEventListener('load', () => {
   ApplicationView = React.render(ApplicationLayout, document.body);
+  initGoogleAnalytics();
   Router.init(routes);
 });
