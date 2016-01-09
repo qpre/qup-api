@@ -12,7 +12,7 @@ let routes: Array<Route> = [];
 
 export function addRoute(path: string, handler: Function) {
   // register route
-  routes.push({path: path, handler: handler});
+  routes.push({ path: path, handler: handler });
 }
 
 export function removeRoute(path: string) {
@@ -43,7 +43,7 @@ function checkRoute() {
 
     // URLPattern does not accept the empty string
     if (route.path == '') {
-      match = (curRoute == '') ? '': null;
+      match = (curRoute == '') ? '' : null;
     } else {
       let pattern;
       pattern = new UrlPattern(route.path);
