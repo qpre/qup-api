@@ -4,7 +4,7 @@ I will show you how you can get the benefits of _virtual-dom_ bound to _Redux_.
 ## When size matters
 
 When _Redux_ is only **2kb**, _React_ weights **136kb**, this ain't so much, but in certain cases in can be **too** much.
-_Virtual-DOM_ on its side only costs *17kb* after minification, a size that can go down when imported through a bundler using tree-shaking,
+_Virtual-DOM_ on its side only costs **17kb** after minification, a size that can go down when imported through a bundler using tree-shaking,
 such as _Webpack-2.0_.
 
 ## Virtual-DOM
