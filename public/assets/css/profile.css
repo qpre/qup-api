@@ -1,0 +1,102 @@
+html, body {
+  height:100%;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  color: #8C939F;
+  font: 13px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #8C939F;
+}
+
+hr {
+  margin: 0 25px;
+  border: none;
+  background-color: #cfd9eb;
+  height: 1px;
+}
+
+ul {
+  margin:   0;
+  padding:  0;
+}
+
+.pane {
+  position: flex;
+  width:   calc(100%);
+}
+
+/* HEAD */
+.head {
+  display:    flex;
+  justify-content:  center;
+  align-items:      center;
+  flex-direction:   column;
+
+  height:     50%;
+  min-height: 50%;
+  background-image: url(https://drscdn.500px.org/photo/148145985/q%3D80_m%3D1500/c37ba3ca5795de26d861ed09a71ddf93);
+  background-size:  cover;
+}
+
+.head .photo {
+  height: 100px;
+  width:  100px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-image: url(http://static2.comicvine.com/uploads/scale_medium/2/25461/1293650-red_forman.jpg);
+  background-size:  cover;
+    background-position: center;
+}
+
+.head .name {
+  margin-top: 10px;
+  font-size:  17px;
+}
+
+.head .description {
+  margin-top: -3px;
+  font-size:  10px;
+}
+
+/* CONTENT */
+.nav {
+  width:            calc(100%);
+  list-style:       none;
+  display:          flex;
+  justify-content:  center;
+  align-items:      center;
+}
+
+.nav li {
+  text-transform: capitalize;
+  padding:        15px 15px;
+  font-weight:    bold;
+}
+
+.nav li a {
+  transition: color 700ms;
+}
+
+.nav li a:hover {
+  color:      #2E90D0;
+  transition: color 700ms;
+}
+
+/* Experience */
+ul.experience {
+  list-style:       none;
+  display:          flex;
+  justify-content:  center;
+  align-items:      center;
+  flex-direction:   column;
+}
+
+ul.experience li {
+  width: calc(100% - 60px);
+  min-height: 100px;
+  border-bottom: 1px solid #cfd9eb;
+}
