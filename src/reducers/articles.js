@@ -1,4 +1,4 @@
-export let articles = [
+const initialState = [
   {
     id:    3,
     title: 'Building and Deploying a Swift project to Amazon EC2 with Git',
@@ -23,3 +23,10 @@ export let articles = [
     cover: '/assets/images/IMG_0055.jpg',
   },
 ];
+
+export function articles(state = initialState, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
