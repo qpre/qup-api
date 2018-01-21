@@ -1,52 +1,21 @@
-import 'babel-polyfill';
-import * as React from 'react';
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
-window.React = React;
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
+    );
+  }
+}
 
-import * as ObjectObserve from './polyfills/object-observe';
-
-ObjectObserve.applyPolyfill();
-
-import {ApplicationLayout}  from './layouts/application';
-import * as Index     from './layouts/index';
-import * as Articles  from './layouts/articles';
-import * as Article   from './layouts/article';
-import * as About     from './layouts/about';
-import * as Router    from './lib/router';
-
-import {initGoogleAnalytics} from './lib/google_analytics';
-
-export let ApplicationView;
-
-let routes = [
-  {
-    path: '',
-    handler: (params) => {
-      ApplicationView.yield(Index.Layout, params);
-    },
-  },
-  {
-    path: 'articles',
-    handler: (params) => {
-      ApplicationView.yield(Articles.Layout, params);
-    },
-  },
-  {
-    path: 'about',
-    handler: (params) => {
-      ApplicationView.yield(About.Layout, params);
-    },
-  },
-  {
-    path: 'article/:id',
-    handler: (params) => {
-      ApplicationView.yield(Article.Layout, params);
-    },
-  },
-];
-
-window.addEventListener('load', () => {
-  ApplicationView = React.render(ApplicationLayout, document.body);
-  initGoogleAnalytics();
-  Router.init(routes);
-});
+export default App;
