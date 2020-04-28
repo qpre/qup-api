@@ -8,8 +8,8 @@ import "./App.css";
 const linksStyle = css({
   color: "#999",
   ":hover": {
-    color: "#2592FC"
-  }
+    color: "#2592FC",
+  },
 });
 
 class App extends Component {
@@ -21,7 +21,7 @@ class App extends Component {
           height: "calc(100vh)",
           backgroundImage: `url(${backgroundImage})`,
           backgroundPosition: "center",
-          backgroundSize: "cover"
+          backgroundSize: "cover",
         }}
       >
         <Layout>
@@ -44,15 +44,15 @@ class App extends Component {
                     borderRadius: "50%",
                     overflow: "hidden",
                     marginBottom: "20px",
-                    marginTop: "20px"
+                    marginTop: "20px",
                   }}
                 />
                 <h2>Quentin Pré</h2>
                 <div style={{ marginTop: "20px" }}>
-                  Lead Front-End Engineer @{" "}
-                  <a href="https://adikteev.com">Adikteev</a>
+                  Head of Engineering @{" "}
+                  <a href="https://www.emoteev.io">eMoteev</a>
                   <br />
-                  Javascript Teacher @ <a href="https://epita.fr">EPITA</a>
+                  JavaScript Teacher @ <a href="https://epita.fr">EPITA</a>
                   <br />
                 </div>
               </div>
